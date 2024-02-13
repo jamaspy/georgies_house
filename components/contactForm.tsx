@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { date, z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { date, z } from 'zod';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -13,21 +13,21 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { motion } from "framer-motion";
-import { useState } from "react";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
+    message: 'Name must be at least 2 characters.',
   }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: 'Please enter a valid email address.',
   }),
   message: z.string().min(2, {
-    message: "Message must be at least 2 characters.",
+    message: 'Message must be at least 2 characters.',
   }),
 });
 
@@ -37,20 +37,20 @@ const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    if (!values) return console.log("No values");
+    if (!values) return console.log('No values');
     setSending(true);
     try {
-      const response = await fetch("/api/send", {
-        method: "POST",
+      const response = await fetch('/api/send', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
       });
@@ -61,12 +61,12 @@ const ContactForm = () => {
       } else {
         setSent(false);
         setSending(false);
-        console.error("There was an error:", data);
+        console.error('There was an error:', data);
       }
       form.reset();
       return data;
     } catch (error) {
-      console.error("There was an error:", error);
+      console.error('There was an error:', error);
     }
   }
 
@@ -131,16 +131,16 @@ const ContactForm = () => {
               type="submit"
               disabled={sending}
               className={`${
-                sending ? "bg-gray-400" : "bg-george-black"
+                sending ? 'bg-gray-400' : 'bg-george-black'
               } "font-aptly font-bold  hover:bg-george-lime hover:text-george-black"`}
             >
-              {sending ? "Sending..." : sent ? "Sent!" : "Send"}
+              {sending ? 'Sending...' : sent ? 'Sent!' : 'Send'}
             </Button>
           </motion.button>
-          {!sent && (
+          {sent && (
             <p
               className={`${
-                !sent ? "visible" : "invisible"
+                !sent ? 'visible' : 'invisible'
               } text-george-pink font-semibold`}
             >
               Thank you. We&rsquo;ll be in touch as soon as we can.
