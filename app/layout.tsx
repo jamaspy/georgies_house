@@ -5,8 +5,9 @@ import './globals.css';
 const space = Space_Grotesk({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Georgies House',
+  title: "Georgie's House",
   description: 'Youth mental health and wellbeing support',
+  metadataBase: new URL('https://www.georgieshouse.org.au'),
 };
 
 export default function RootLayout({

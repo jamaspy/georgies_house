@@ -141,7 +141,7 @@ const ContactForm = () => {
             <p
               className={`${
                 !sent ? 'visible' : 'invisible'
-              } text-george-pink font-semibold`}
+              } text-george-magenta font-semibold`}
             >
               Thank you. We&rsquo;ll be in touch as soon as we can.
             </p>

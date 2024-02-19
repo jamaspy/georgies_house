@@ -1,15 +1,7 @@
 'use client';
-import Image from 'next/image';
-import {
-  Quote,
-  ChevronsUp,
-  MoveUpLeft,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Contact,
-} from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+
+import { ChevronsUp, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { useState } from 'react';
 import HomePage from '@/components/home';
 import AboutPage from '@/components/about';
 import ContactPage from '@/components/contact';
@@ -46,7 +38,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen p-4">
-      <section className="flex flex-col justify-between container flex-1 bg-stone-50 rounded-2xl shadow-md overflow-hidden relative">
+      <section className="flex flex-col justify-between container flex-1 bg-stone-50 rounded-3xl shadow-md overflow-hidden relative">
         <Header
           showHome={showHome}
           showAbout={showAbout}

@@ -16,45 +16,38 @@ const Header = ({ showHome, showAbout, showContact }: HeaderProps) => {
           initial={{ x: '-100%', scale: 0.5 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-row gap-12 items-start justify-start text-george-black"
+          className="flex flex-row gap-12 items-start justify-start text-gray-800"
         >
           <button
             type="button"
             onClick={showHome}
-            className="font-aptly text-2xl font-bold cursor-pointer hover:text-george-teal"
+            className="font-aptly text-2xl font-bold cursor-pointer hover:text-george-lilac"
           >
             Home
           </button>
           <button
             type="button"
             onClick={showAbout}
-            className="font-aptly text-2xl font-bold cursor-pointer hover:text-george-teal"
+            className="font-aptly text-2xl font-bold cursor-pointer hover:text-george-lilac"
           >
-            About
+            Our Team
           </button>
           <button
             type="button"
             onClick={showContact}
-            className="font-aptly text-2xl font-bold cursor-pointer hover:text-george-teal"
+            className="font-aptly text-2xl font-bold cursor-pointer hover:text-george-lilac"
           >
             Contact
           </button>
         </motion.div>
       </div>
-      <div className=" bg-george-purple relative p-4 w-full lg:w-3/4">
+      <div className=" bg-george-lilac relative p-4 w-full lg:w-3/4">
         <div className="flex-1 relative w-full h-full">
-          {/* <Image
-            src="/g2.svg"
-            width={500}
-            height={300}
-            alt="George's House"
-            className="mx-auto"
-          /> */}
           <motion.img
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            src="/g2.svg"
+            src="/Logo_Orange.svg"
             alt="George's House"
             className="mx-auto max-w-xl w-full h-auto"
           />
