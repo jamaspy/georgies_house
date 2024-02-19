@@ -11,7 +11,7 @@ interface CardProps {
 const Card = ({ name, description, image, rotate }: CardProps) => {
   return (
     <div
-      className={`rounded-xl shadow-md border-4 border-george-black p-4 bg-george-pink text-george-black lg:hover:-translate-y-1 lg:hover:rotate-3 lg:hover:shadow-lg transition-all duration-200 ease-in-out ${
+      className={`rounded-xl shadow-md border-4 border-gray-800 p-4 bg-george-magenta text-gray-800 lg:hover:-translate-y-1 lg:hover:rotate-3 lg:hover:shadow-lg transition-all duration-200 ease-in-out ${
         rotate ? 'rotate-3 md:rotate-0' : '-rotate-2 md:rotate-0'
       }`}
     >
@@ -19,7 +19,7 @@ const Card = ({ name, description, image, rotate }: CardProps) => {
         <img
           src={image}
           alt={name}
-          className="rounded-full w-24 h-24 border-4 border-george-black"
+          className="rounded-full w-24 h-24 border-4 border-gray-800 object-cover object-center"
         />
         <p className="md:text-2xl text-3xl font-aptly font-bold">{name}</p>
       </div>

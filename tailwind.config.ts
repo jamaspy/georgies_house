@@ -25,11 +25,11 @@ const config = {
       colors: {
         'george-black': '#1D161D',
         'george-lime': '#36DF8E',
-        'george-yellow': '#F9F43A',
-        'george-purple': '#DC4DFF',
-        'george-lilac': '#9194C9',
-        'george-blue': '#4D9EFB',
-        'george-pink': '#FF9FF8',
+        'george-teal': '#51d3CD',
+        'george-magenta': '#DC4DFF',
+        'george-lilac': '#8256EF',
+        'george-orange': '#FF7900',
+        'george-blue': '#6864FF',
       },
       keyframes: {
         'accordion-down': {
