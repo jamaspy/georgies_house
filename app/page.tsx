@@ -82,15 +82,15 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row bg-blue-100 w-full z-20">
           <div className="w-full md:w-3/4 bg-george-black p-12 flex flex-row items-center justify-center gap-8">
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-              <Facebook className="text-george-lime hover:text-george-purple cursor-pointer" />
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <a href="https://www.instagram.com/georgies.house/" target="_blank">
               <Instagram className="text-george-lime hover:text-george-purple cursor-pointer" />
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/georgie-s/about/"
+              target="_blank"
+            >
               <Linkedin className="text-george-lime hover:text-george-purple cursor-pointer" />
-            </motion.div>
+            </a>
           </div>
           <div className="w-full md:w-1/4 bg-george-blue flex lfex-row items-center justify-end">
             <ChevronsUp className="w-24 h-24" />
