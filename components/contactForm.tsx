@@ -16,7 +16,6 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const formSchema = z.object({
@@ -34,6 +33,7 @@ const formSchema = z.object({
 const ContactForm = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,6 +42,10 @@ const ContactForm = () => {
       message: '',
     },
   });
+
+  const values = form.getValues();
+  const hasError = !values.name || !values.email || !values.message;
+  console.log('🚀  HERE>>>>>> :  : ContactForm : hasError:', hasError);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (!values) return console.log('No values');
@@ -81,7 +85,9 @@ const ContactForm = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your full name</FormLabel>
+              <FormLabel className="font-semibold font-katarine">
+                Your full name
+              </FormLabel>
               <FormControl>
                 <Input placeholder="Full name" {...field} />
               </FormControl>
@@ -94,7 +100,9 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your email address</FormLabel>
+              <FormLabel className="font-semibold font-katarine">
+                Your email address
+              </FormLabel>
               <FormControl>
                 <Input placeholder="Email address" {...field} />
               </FormControl>
@@ -110,7 +118,9 @@ const ContactForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your message</FormLabel>
+              <FormLabel className="font-semibold font-katarine">
+                Your message
+              </FormLabel>
               <FormControl>
                 <Textarea placeholder="Your message" {...field} />
               </FormControl>
@@ -120,23 +130,16 @@ const ContactForm = () => {
           )}
         />
         <div className="flex flex-col md:flex-row gap-4 items-center">
-          <motion.button
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.3 },
-            }}
-            whileTap={{ scale: 0.9 }}
+          <Button
+            type="submit"
+            disabled={sending || hasError}
+            className={`${
+              sending ? 'bg-gray-400' : 'bg-george-black'
+            } "font-aptly font-bold disabled:cursor-not-allowed  hover:bg-george-lilac hover:text-george-black"`}
           >
-            <Button
-              type="submit"
-              disabled={sending}
-              className={`${
-                sending ? 'bg-gray-400' : 'bg-george-black'
-              } "font-aptly font-bold  hover:bg-george-lime hover:text-george-black"`}
-            >
-              {sending ? 'Sending...' : sent ? 'Sent!' : 'Send'}
-            </Button>
-          </motion.button>
+            {sending ? 'Sending...' : sent ? 'Sent!' : 'Send'}
+          </Button>
+
           {sent && (
             <p
               className={`${
