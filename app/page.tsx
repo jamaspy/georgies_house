@@ -1,102 +1,42 @@
-'use client';
-
-import { ChevronsUp, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { useState } from 'react';
-import HomePage from '@/components/home';
-import AboutPage from '@/components/about';
-import ContactPage from '@/components/contact';
-import Header from '@/components/header';
-import { AnimatePresence, motion } from 'framer-motion';
-
+import Image from 'next/image';
 export default function Home() {
-  const [showHomeState, setShowHomeState] = useState(true);
-  const [showAboutState, setShowAboutState] = useState(false);
-  const [showContactState, setShowContactState] = useState(false);
-  const showHome = () => {
-    setShowHomeState(true);
-    setShowAboutState(false);
-    setShowContactState(false);
-  };
-  const showAbout = () => {
-    setShowHomeState(false);
-    setShowAboutState(true);
-    setShowContactState(false);
-  };
-
-  const showContact = () => {
-    setShowHomeState(false);
-    setShowAboutState(false);
-    setShowContactState(true);
-  };
-
-  const pageTransitions = {
-    initial: { x: '100vw', opacity: 0 },
-    animate: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.6 } },
-    transition: { type: 'spring', stiffness: 100, damping: 20 },
-    exit: { x: '-100vw', opacity: 0, transition: { duration: 0.5 } },
-  };
-
   return (
-    <main className="flex min-h-screen p-4">
-      <section className="flex flex-col justify-between container flex-1 bg-stone-50 rounded-3xl shadow-md overflow-hidden relative">
-        <Header
-          showHome={showHome}
-          showAbout={showAbout}
-          showContact={showContact}
-        />
-        <AnimatePresence>
-          {showHomeState && (
-            <motion.div
-              key="home"
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageTransitions}
-            >
-              <HomePage />
-            </motion.div>
-          )}
-          {showAboutState && (
-            <motion.div
-              key="about"
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageTransitions}
-            >
-              <AboutPage />
-            </motion.div>
-          )}
-          {showContactState && (
-            <motion.div
-              key="contact"
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageTransitions}
-            >
-              <ContactPage />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div className="flex flex-col md:flex-row bg-blue-100 w-full z-20">
-          <div className="w-full md:w-3/4 bg-george-black p-12 flex flex-row items-center justify-center gap-8">
-            <a href="https://www.instagram.com/georgies.house/" target="_blank">
-              <Instagram className="text-george-lime hover:text-george-purple cursor-pointer" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/georgie-s/about/"
-              target="_blank"
-            >
-              <Linkedin className="text-george-lime hover:text-george-purple cursor-pointer" />
-            </a>
-          </div>
-          <div className="w-full md:w-1/4 bg-george-blue flex lfex-row items-center justify-end">
-            <ChevronsUp className="w-24 h-24" />
-          </div>
+    <div className="flex h-full">
+      <section className="w-full md:w-1/2">
+        <div className="overflow-y-auto flex-1 flex flex-col items-start justify-center h-full p-2 md:p-4 text-neutral-800">
+          <p className="text-5xl font-bold font-aptly mb-6">
+            Welcome to Georgie&rsquo;s House
+          </p>
+          <p className="text-xl leading-relaxed font-katarine">
+            Georgie&rsquo;s House pays homage to the first lighthouse keeper of
+            Barrenjoey Lighthouse on Sydney&rsquo;s Northern Beaches. George was
+            there to shine a light through darkness or guide ships out at sea.
+          </p>
+          <p className="text-xl leading-relaxed font-katarine my-4">
+            Georgie&rsquo;s has been created through a desperate passion to
+            support young people through their life. Georgie&rsquo;s is a
+            community that helps young people understand their wellbeing,
+            navigate life&rsquo;s challenges, connect with each other and
+            ultimately, thrive.
+          </p>
+          <p className="text-xl leading-relaxed font-katarine mb-12 md:mb-0">
+            We will be here when the sun is shining as an icon of brilliance,
+            happiness and awe, and we will consistently provide a beacon of
+            support, guidance and stability during any storm.
+          </p>
         </div>
       </section>
-    </main>
+      <section className="hidden md:flex w-1/2 bg-george-orange min-h-[90vh]">
+        <div className="h-full  flex items-center justify-center">
+          <Image
+            src="/Logo_Orange_InvertedWhite.svg"
+            alt="georgies house lighthouse"
+            width={1000}
+            height={300}
+            className="mx-auto"
+          />
+        </div>
+      </section>
+    </div>
   );
 }
