@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <div className="flex h-full">
       <section className="w-full md:w-1/2">
-        <div className="overflow-y-auto flex-1 flex flex-col items-start justify-center h-full p-2 md:p-4 text-neutral-800">
+        <div className="overflow-y-auto flex-1 flex flex-col items-start justify-center h-full p-4 md:p-8 text-neutral-800">
           <p className="text-5xl font-bold font-aptly mb-6">
             Welcome to Georgie&rsquo;s House
           </p>

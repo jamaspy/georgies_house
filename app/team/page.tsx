@@ -14,7 +14,7 @@ const JADE = {
   name: 'Jade Speight',
   jobTitle: 'Marketing and Communications Manager',
   description:
-    'Jack has previously worked in educational settings mentoring Indigenous youth in urban, rural and remote environments, led a mental health charity and worked as a consultant, advising government agencies on mental health service design, policies, reform and systemic change. Jack is the CEO of Georgie’s, overseeing the design and implementation of the service, whilst managing relationships and partnerships throughout the journey. Jack reports directly to the Board.',
+    'Nulla magna laborum ipsum deserunt eiusmod ut. Enim nostrud in laborum pariatur ex aliquip excepteur ea aliqua magna pariatur. Anim adipisicing incididunt velit do ut cupidatat magna tempor cillum cillum cillum ea consequat. Non ad et quis nulla sint consequat officia nisi magna Lorem sint Lorem. Et amet in proident id. Irure veniam labore anim irure amet exercitation amet dolore elit.',
   image:
     'https://media.licdn.com/dms/image/D5603AQHmYv7uEsc9Bg/profile-displayphoto-shrink_400_400/0/1708914143376?e=1717027200&v=beta&t=-NR92Dol3VKe1FMwj5cUvqmNrg9Rgdy4rpVDRbAu9AU',
 };
@@ -32,7 +32,7 @@ const TeamPage = () => {
         <Card {...JACK} />
         <Card {...JADE} />
       </div>
-      <h1 className="font-bold text-3xl block mb-8">Our Board</h1>
+      <h1 className="font-bold text-3xl block mb-8 font-aptly">Our Board</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4">
         {boardMembers.map((member, index) => (
           <Card
