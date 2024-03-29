@@ -40,6 +40,12 @@ const Header = () => {
         </Link>
         <Link
           className="hover:text-george-lilac font-semibold transition-all duration-200 ease-in"
+          href="/about"
+        >
+          About
+        </Link>
+        <Link
+          className="hover:text-george-lilac font-semibold transition-all duration-200 ease-in"
           href="/team"
         >
           Our Team
@@ -64,12 +70,18 @@ const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="mr-2 px-12 py-4">
             <DropdownMenuLabel
-              className="text-2xl font-katarine"
+              className="text-2xl font-katarine text-george-lilac"
               onClick={() => handleNavigate('/')}
             >
               Home
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
+            <DropdownMenuItem
+              className="text-2xl font-katarine"
+              onClick={() => handleNavigate('/about')}
+            >
+              About
+            </DropdownMenuItem>
             <DropdownMenuItem
               className="text-2xl font-katarine"
               onClick={() => handleNavigate('/team')}

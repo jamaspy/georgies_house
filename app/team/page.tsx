@@ -1,5 +1,6 @@
 import Card from '@/components/card';
 import { boardMembers } from '@/lib/about-data';
+import Link from 'next/link';
 import React from 'react';
 
 const JACK = {
@@ -14,7 +15,7 @@ const JADE = {
   name: 'Jade Speight',
   jobTitle: 'Marketing and Communications Manager',
   description:
-    'Nulla magna laborum ipsum deserunt eiusmod ut. Enim nostrud in laborum pariatur ex aliquip excepteur ea aliqua magna pariatur. Anim adipisicing incididunt velit do ut cupidatat magna tempor cillum cillum cillum ea consequat. Non ad et quis nulla sint consequat officia nisi magna Lorem sint Lorem. Et amet in proident id. Irure veniam labore anim irure amet exercitation amet dolore elit.',
+    "Super keen to be jumping on board to head up Georgie’s Marketing and Comms! I feel so lucky to have grown up in the best place on earth (the Northern Beaches), always at the beach, I consider myself a big fan of health and wellness, my morning routine is paramount to a productive day. I love connecting with people over a good cup of coffee and I've always got some sort of music playing.",
   image:
     'https://media.licdn.com/dms/image/D5603AQHmYv7uEsc9Bg/profile-displayphoto-shrink_400_400/0/1708914143376?e=1717027200&v=beta&t=-NR92Dol3VKe1FMwj5cUvqmNrg9Rgdy4rpVDRbAu9AU',
 };
@@ -25,8 +26,14 @@ const TeamPage = () => {
         Our Team
       </h1>
       <p className="text-neutral-700 font-katarine">
-        We are small but mighty. We are a team of passionate individuals who are
-        committed to making a difference in the lives of young people.
+        We are small, mighty and looking to grow! We are a team of passionate
+        individuals who are committed to making a difference in the lives of
+        young people. We also believe the more dedicated and passionate
+        individuals we have involved in Georgie&lsquo;s, the greater our impact.
+        If you would like to get involved, please contact us{' '}
+        <Link href="/contact" className="text-george-lime underline">
+          here
+        </Link>
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
         <Card {...JACK} />

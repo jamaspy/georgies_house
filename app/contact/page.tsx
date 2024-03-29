@@ -17,9 +17,9 @@ const ContactPage = () => {
         </div>
         <div className="hidden md:flex flex-1 items-center justify-center">
           <Image
-            src="/Lighthouse_Orange.svg"
+            src="/Logo_Orange_InvertedTransparent.svg"
             alt="georgies house lighthouse"
-            width={110}
+            width={610}
             height={300}
             // className="mx-auto"
           />
