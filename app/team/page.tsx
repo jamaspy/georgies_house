@@ -8,16 +8,14 @@ const JACK = {
   jobTitle: 'CEO',
   description:
     'Jack has previously worked in educational settings mentoring Indigenous youth in urban, rural and remote environments, led a mental health charity and worked as a consultant, advising government agencies on mental health service design, policies, reform and systemic change. Jack is the CEO of Georgie’s, overseeing the design and implementation of the service, whilst managing relationships and partnerships throughout the journey. Jack reports directly to the Board.',
-  image:
-    'https://media.licdn.com/dms/image/C5603AQFQ1ADBC6KYgQ/profile-displayphoto-shrink_800_800/0/1619768117922?e=1712793600&v=beta&t=Qm3LpFTtZtmPzsjdvO_RsDsNafL7IE3Yove0qOf_Am4',
+  image: '/jack.jpeg',
 };
 const JADE = {
   name: 'Jade Speight',
   jobTitle: 'Marketing and Communications Manager',
   description:
     "Super keen to be jumping on board to head up Georgie’s Marketing and Comms! I feel so lucky to have grown up in the best place on earth (the Northern Beaches), always at the beach, I consider myself a big fan of health and wellness, my morning routine is paramount to a productive day. I love connecting with people over a good cup of coffee and I've always got some sort of music playing.",
-  image:
-    'https://media.licdn.com/dms/image/D5603AQHmYv7uEsc9Bg/profile-displayphoto-shrink_400_400/0/1708914143376?e=1717027200&v=beta&t=-NR92Dol3VKe1FMwj5cUvqmNrg9Rgdy4rpVDRbAu9AU',
+  image: '/jade.jpeg',
 };
 const TeamPage = () => {
   return (
