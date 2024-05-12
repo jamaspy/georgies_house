@@ -4,6 +4,7 @@ import { LogIn, LogOut } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 import { Session } from "next-auth";
+
 const LogOutButton = ({ session }: { session: Session | null }) => {
   if (!session) {
     return (
