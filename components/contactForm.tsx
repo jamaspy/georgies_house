@@ -45,7 +45,6 @@ const ContactForm = () => {
 
   const values = form.getValues();
   const hasError = !values.name || !values.email || !values.message;
-  console.log('🚀  HERE>>>>>> :  : ContactForm : hasError:', hasError);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (!values) return console.log('No values');
