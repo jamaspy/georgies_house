@@ -4,11 +4,20 @@ import { LogIn, LogOut } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 import { Session } from "next-auth";
-
-const LogOutButton = ({ session }: { session: Session | null }) => {
+import { cn } from "@/lib/utils";
+const LogOutButton = ({
+  session,
+  className,
+}: {
+  session: Session | null;
+  className?: string;
+}) => {
   if (!session) {
     return (
-      <Link href="/signin" className="flex flex-row gap-2 ml-auto">
+      <Link
+        href="/auth/signin"
+        className={cn(className, "flex flex-row gap-2 ml-auto")}
+      >
         Log In <LogIn size={24} />
       </Link>
     );
@@ -16,9 +25,9 @@ const LogOutButton = ({ session }: { session: Session | null }) => {
   return (
     <button
       onClick={() => signOutUser()}
-      className="flex flex-row gap-2 ml-auto"
+      className={cn(className, "flex flex-row gap-2 hover:text-george-lilac")}
     >
-      Logout <LogOut size={24} />
+      <LogOut size={24} />
     </button>
   );
 };

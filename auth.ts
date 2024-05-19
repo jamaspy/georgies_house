@@ -6,6 +6,11 @@ import { client } from "@/database/client";
 import type { Adapter } from "next-auth/adapters";
 import { resend } from "./utils/resend";
 import SignInEmail from "./react-email-starter/emails/signin";
+import { redirect } from "next/navigation";
+
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: XataAdapter(client) as Adapter,
@@ -13,6 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     Google,
     Resend({
       from: "info@georgieshouse.org.au",
+
       sendVerificationRequest({
         identifier: email,
         url,
@@ -21,7 +27,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const emailVerificationLink = new URL(url);
         emailVerificationLink.searchParams.set(
           "callbackUrl",
-          "https://www.georgieshouse.org.au/dashboard"
+          `${baseUrl}/dashboard`
         );
         const newLink = emailVerificationLink.href;
         resend.emails.send({
@@ -36,6 +42,21 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   pages: {
-    signIn: "/signin",
+    signIn: "/auth/signin",
+    verifyRequest: "/auth/checkemail",
+    newUser: "/auth/newuser",
+  },
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      // Allows relative URLs to be used
+      if (url.startsWith("/")) {
+        return `${baseUrl}/dashboard`;
+      }
+      // Allows external URLs
+      else if (new URL(url).origin === baseUrl) {
+        return `${baseUrl}/dashboard`;
+      }
+      return baseUrl;
+    },
   },
 });

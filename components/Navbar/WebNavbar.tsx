@@ -50,7 +50,15 @@ const WebNavbar = async () => {
         >
           Contact
         </Link>
-        <LogOutButton session={session} />
+        {session && (
+          <Link
+            className="hover:text-george-lilac font-semibold transition-all duration-200 ease-in"
+            href="/dashboard"
+          >
+            Georgies App
+          </Link>
+        )}
+        <LogOutButton className="ml-auto" session={session} />
       </div>
     </>
   );

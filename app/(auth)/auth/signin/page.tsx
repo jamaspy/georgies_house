@@ -1,6 +1,3 @@
-import Button from "@/components/AuthButtons/Button";
-import { signInWithGoogle } from "@/actions/auth";
-import { FcGoogle } from "react-icons/fc";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import Image from "next/image";
 import React from "react";
@@ -20,7 +17,10 @@ const SignInPage = () => {
       <form
         action={async (formData) => {
           "use server";
-          await signIn("resend", formData);
+          await signIn("resend", formData, {
+            redirectTo: "/dashbaord",
+            redirect: "true",
+          });
         }}
       >
         <Input type="text" name="email" placeholder="Email" className="mb-2" />
@@ -32,13 +32,6 @@ const SignInPage = () => {
           Sign in with Magic Link
         </button>
       </form>
-
-      <p className="my-2 font-semibold text-center text-george-orange">OR</p>
-      <Button
-        onClick={signInWithGoogle}
-        label="Sign in with Google"
-        icon={<FcGoogle />}
-      />
     </div>
   );
 };

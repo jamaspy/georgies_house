@@ -15,7 +15,7 @@ import * as React from "react";
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : "";
+  : "http://localhost:3000";
 
 export const SignInEmail = ({ url }: { url: string }) => (
   <Html>
@@ -25,13 +25,12 @@ export const SignInEmail = ({ url }: { url: string }) => (
       <Container style={container}>
         <Section style={box}>
           <Img
-            src={`${baseUrl}/static/emailLogo.svg`}
+            src={`${baseUrl}/static/emailLogo.svg || https://www.georgieshouse.org.au/Logo_Orange_InvertedWhite.svg`}
             width="300"
             height="300"
             alt="Georgies House"
             style={image}
           />
-          {/* <Hr style={hr} /> */}
 
           <Text style={paragraph}>Hi 👋🏻,</Text>
           <Text style={paragraph}>
@@ -47,7 +46,7 @@ export const SignInEmail = ({ url }: { url: string }) => (
           <Text style={paragraph}>- Georgie</Text>
           <Hr style={hr} />
           <Text>
-            <Link href="https://www.stackshow.app" style={anchor}>
+            <Link href={baseUrl} style={anchor}>
               Click here
             </Link>{" "}
             to return to Georgies House.
