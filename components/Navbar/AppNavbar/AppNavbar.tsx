@@ -9,7 +9,7 @@ const AppNavbar = async () => {
   const session = await auth();
   return (
     <>
-      <nav className="hidden md:flex w-full p-4 bg-neutral-200 flex-row items-center justify-start gap-8">
+      <nav className="hidden md:flex w-full p-4 bg-neutral-50 flex-row items-center justify-start gap-8">
         <Image
           src="/Logo_Orange_InvertedWhite.svg"
           alt="georgies house"

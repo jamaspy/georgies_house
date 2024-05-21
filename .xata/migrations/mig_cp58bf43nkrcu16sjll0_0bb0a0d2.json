@@ -1,0 +1,12 @@
+{
+  "id": "mig_cp58bf43nkrcu16sjll0",
+  "parentID": "mig_cp58b1s3nkrcu16sjlk0",
+  "checksum": "1:0bb0a0d244ca3af35bbde0d3dc0c9ff940060bdbe5ae840dfcb2be88bec4a5ee",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "profile"
+      }
+    }
+  ]
+}

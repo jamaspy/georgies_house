@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import AppNavbar from "@/components/Navbar/AppNavbar/AppNavbar";
 import MobileAppNavbar from "@/components/Navbar/AppNavbar/MobileAppNavbar";
 import { auth } from "@/auth";
+import { Toaster } from "@/components/ui/sonner";
 const space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +19,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
   return (
     <html lang="en">
       <body
@@ -27,10 +27,11 @@ export default async function RootLayout({
           "min-h-screen bg-gradient-to-br from-george-orange to-orange-600 p-4 flex flex-col items-center justify-center"
         )}
       >
-        <main className="flex flex-col items-center justify-between min-h-[96vh] bg-neutral-200 relative rounded-lg w-full overflow-hidden">
+        <main className="flex flex-col items-center justify-between min-h-[96vh] bg-neutral-50 relative rounded-lg w-full overflow-hidden">
           <AppNavbar />
           {children}
         </main>
+        <Toaster richColors />
       </body>
     </html>
   );

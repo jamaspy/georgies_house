@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp5hhflr47k61gnrtcgg",
+  "parentID": "mig_cp5hfc43nkrcu16sjnh0",
+  "checksum": "1:0e6a93354543c94ea1b2d9f7a6867e36d0761109cc58267df644b1ae22f18e22",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "mood",
+          "type": "int"
+        },
+        "table": "mood"
+      }
+    }
+  ]
+}
