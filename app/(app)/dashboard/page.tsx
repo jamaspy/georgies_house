@@ -4,8 +4,7 @@ import { NewUserNameModel } from "@/components/new-user-name-model/new-user-name
 import { MoodRating } from "@/components/complex";
 import { getContent } from "@/actions/posts";
 import { Post } from "@/models/sanity";
-import Link from "next/link";
-import { ArticleLink } from "@/components/complex/article-link";
+import { ArticleLink } from "@/components/complex";
 
 const DashboardPage = async () => {
   const session = await auth();
@@ -38,7 +37,7 @@ const DashboardPage = async () => {
       </section>
 
       <section className="flex flex-col md:flex-row gap-4 mt-8 px-4">
-        <div className="flex-1 rounded-md shadow p-2 h-full">
+        <div className="flex-1 rounded-md shadow p-2 h-full flex flex-col gap-2">
           <p className="text-xl font-semibold">Recent Articles</p>
           {posts.map((post: Post) => (
             <ArticleLink

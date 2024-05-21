@@ -27,7 +27,7 @@ export default async function RootLayout({
           "min-h-screen bg-gradient-to-br from-george-orange to-orange-600 p-4 flex flex-col items-center justify-center"
         )}
       >
-        <main className="flex flex-col items-center justify-between min-h-[96vh] bg-neutral-50 relative rounded-lg w-full overflow-hidden">
+        <main className="flex flex-col items-center justify-start min-h-[96vh] bg-neutral-50 relative rounded-lg w-full overflow-hidden">
           <AppNavbar />
           {children}
         </main>

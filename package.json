@@ -23,6 +23,7 @@
     "@sanity/client": "^6.18.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/react-loader": "^1.9.19",
+    "@sanity/ui": "^2.1.11",
     "@sanity/vision": "^3.42.1",
     "@xata.io/client": "^0.29.4",
     "class-variance-authority": "^0.7.0",
