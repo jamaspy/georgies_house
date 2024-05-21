@@ -5,8 +5,7 @@ import { XataAdapter } from "@auth/xata-adapter";
 import { client } from "@/database/client";
 import type { Adapter } from "next-auth/adapters";
 import { resend } from "./utils/resend";
-import SignInEmail from "./react-email-starter/emails/signin";
-import { redirect } from "next/navigation";
+import SignInEmail from "./components/email/signin";
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
