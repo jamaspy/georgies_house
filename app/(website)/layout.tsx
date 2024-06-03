@@ -1,15 +1,15 @@
-import type { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
-import './globals.css';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
+import "../globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
-const space = Space_Grotesk({ subsets: ['latin'] });
+const space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Georgie's House",
-  description: 'Youth mental health and wellbeing support',
-  metadataBase: new URL('https://www.georgieshouse.org.au'),
+  description: "Youth mental health and wellbeing support",
+  metadataBase: new URL("https://www.georgieshouse.org.au"),
 };
 
 export default function RootLayout({

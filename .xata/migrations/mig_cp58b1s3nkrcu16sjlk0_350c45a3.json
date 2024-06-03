@@ -1,0 +1,20 @@
+{
+  "id": "mig_cp58b1s3nkrcu16sjlk0",
+  "parentID": "mig_cp58alk3nkrcu16sjlj0",
+  "checksum": "1:350c45a3a297bc87a305e507af1a384f82a3feb8473728834e7603e37dd3e423",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "next-auth_user",
+          "type": "link",
+          "link": {
+            "table": "nextauth_users"
+          },
+          "unique": true
+        },
+        "table": "profile"
+      }
+    }
+  ]
+}
