@@ -12,10 +12,10 @@ const LogOutButton = ({
   session: Session | null;
   className?: string;
 }) => {
-  if (localStorage.getItem("georgiesDevMode") === "false") {
+  if (localStorage.getItem("georgiesDevMode") !== "true") {
     return null;
   }
-  console.log(typeof localStorage.getItem("georgiesDevMode"));
+
   if (!session) {
     return (
       <Link

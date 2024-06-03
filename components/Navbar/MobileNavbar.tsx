@@ -14,7 +14,7 @@ import { AuthButtons } from "../AuthButtons";
 import { Session } from "next-auth";
 
 const MobileNavbar = ({ session }: { session: Session | null }) => {
-  const shadow = localStorage.getItem("georgiesDevMode") === "false";
+  const shadow = localStorage.getItem("georgiesDevMode") === "true";
   const [state, setState] = React.useState(false);
   const router = useRouter();
 
@@ -54,11 +54,11 @@ const MobileNavbar = ({ session }: { session: Session | null }) => {
           >
             Contact Us
           </DropdownMenuItem>
-          {!shadow && (
+          {shadow ? (
             <DropdownMenuItem className="text-2xl font-katarine">
               <AuthButtons session={session} />
             </DropdownMenuItem>
-          )}
+          ) : null}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
