@@ -11,8 +11,10 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { AuthButtons } from "../AuthButtons";
+import { Session } from "next-auth";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ session }: { session: Session | null }) => {
+  const shadow = localStorage.getItem("georgiesDevMode") === "false";
   const [state, setState] = React.useState(false);
   const router = useRouter();
 
@@ -52,9 +54,11 @@ const MobileNavbar = () => {
           >
             Contact Us
           </DropdownMenuItem>
-          <DropdownMenuItem className="text-2xl font-katarine">
-            <AuthButtons />
-          </DropdownMenuItem>
+          {!shadow && (
+            <DropdownMenuItem className="text-2xl font-katarine">
+              <AuthButtons session={session} />
+            </DropdownMenuItem>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

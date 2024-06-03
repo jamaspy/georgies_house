@@ -11,7 +11,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import React from "react";
-import { DoorClosed, Menu, User } from "lucide-react";
+import { Menu, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import LogOutButton from "@/components/AuthButtons/LogoutButton";

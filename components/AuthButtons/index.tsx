@@ -1,14 +1,9 @@
-import {
-  getServerSession,
-  signInWithGoogle,
-  signOutUser,
-} from "@/actions/auth";
+import { signInWithGoogle, signOutUser } from "@/actions/auth";
 import { LogIn, LogOut } from "lucide-react";
 import Button from "./Button";
+import { Session } from "next-auth";
 
-export async function AuthButtons() {
-  const session = await getServerSession();
-
+export function AuthButtons({ session }: { session: Session | null }) {
   if (!session) {
     return (
       <Button
