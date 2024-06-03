@@ -31,7 +31,7 @@ export function NewUserNameModel({ session }: { session: Session | null }) {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Let's add your name.</DialogTitle>
+          <DialogTitle>Let&lsquo;s add your name.</DialogTitle>
           <DialogDescription>
             Looks like you are new here. Please add your name below so we can
             get to know you.

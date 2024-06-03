@@ -1,16 +1,4 @@
-import {
-  Body,
-  Button,
-  Container,
-  Head,
-  Hr,
-  Html,
-  Img,
-  Link,
-  Preview,
-  Section,
-  Text,
-} from "@react-email/components";
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 
 const baseUrl = process.env.VERCEL_URL
@@ -18,46 +6,41 @@ const baseUrl = process.env.VERCEL_URL
   : "http://localhost:3000";
 
 export const SignInEmail = ({ url }: { url: string }) => (
-  <Html>
-    <Head />
-    <Preview>Your Secure Georgies House Link Is Here!</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Section style={box}>
-          <Img
+  <html lang="en">
+    <body style={main}>
+      <div style={container}>
+        <section style={box}>
+          <img
             src={`${baseUrl}/static/emailLogo.svg || https://www.georgieshouse.org.au/Logo_Orange_InvertedWhite.svg`}
             width="300"
             height="300"
             alt="Georgies House"
             style={image}
           />
-
-          <Text style={paragraph}>Hi 👋🏻,</Text>
-          <Text style={paragraph}>
+          <p style={paragraph}>Hi 👋🏻,</p>
+          <p style={paragraph}>
             This is your secure link to sign in to Georgies House.
-          </Text>
-          <Text style={paragraph}>Click the button below to log in.</Text>
-          <Button style={button} href={url}>
+          </p>
+          <p style={paragraph}>Click the button below to log in.</p>
+          <a style={button} href={url}>
             🪄 Magic Sign In Link
-          </Button>
+          </a>
 
-          <Hr style={hr} />
+          <hr style={hr} />
 
-          <Text style={paragraph}>- Georgie</Text>
-          <Hr style={hr} />
-          <Text>
-            <Link href={baseUrl} style={anchor}>
+          <p style={paragraph}>- Georgie</p>
+          <hr style={hr} />
+          <p>
+            <a href={baseUrl} style={anchor}>
               Click here
-            </Link>{" "}
+            </a>{" "}
             to return to Georgies House.
-          </Text>
-          <Text style={footer}>
-            Georgies House PTY Ltd Copyright 2024 &copy;
-          </Text>
-        </Section>
-      </Container>
-    </Body>
-  </Html>
+          </p>
+          <p style={footer}>Georgies House PTY Ltd Copyright 2024 &copy;</p>
+        </section>
+      </div>
+    </body>
+  </html>
 );
 
 export default SignInEmail;

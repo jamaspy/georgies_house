@@ -18,8 +18,4 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: ["/dashboard/:path*"],
-  unstable_allowDynamic: [
-    // allows a single file
-    "/components/email/signin.tsx",
-  ],
 };
