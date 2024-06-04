@@ -14,7 +14,12 @@ import { AuthButtons } from "../AuthButtons";
 import { Session } from "next-auth";
 
 const MobileNavbar = ({ session }: { session: Session | null }) => {
-  const shadow = localStorage.getItem("georgiesDevMode") === "true";
+  let shadow;
+
+  if (typeof window !== "undefined") {
+    shadow = localStorage.getItem("georgiesDevMode") === "true";
+  }
+
   const [state, setState] = React.useState(false);
   const router = useRouter();
 
