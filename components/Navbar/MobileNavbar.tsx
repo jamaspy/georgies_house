@@ -59,11 +59,11 @@ const MobileNavbar = ({ session }: { session: Session | null }) => {
           >
             Contact Us
           </DropdownMenuItem>
-          {shadow ? (
+          {/* {shadow ? (
             <DropdownMenuItem className="text-2xl font-katarine">
               <AuthButtons session={session} />
             </DropdownMenuItem>
-          ) : null}
+          ) : null} */}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

@@ -38,12 +38,7 @@ const WebNavbar = async () => {
         >
           Our Team
         </Link>
-        {/* <Link
-      className="hover:text-george-lilac font-semibold transition-all duration-200 ease-in"
-      href="/events"
-    >
-      Events
-    </Link> */}
+
         <Link
           className="hover:text-george-lilac font-semibold transition-all duration-200 ease-in"
           href="/contact"
@@ -58,7 +53,7 @@ const WebNavbar = async () => {
             Georgies App
           </Link>
         )}
-        <LogOutButton className="ml-auto" session={session} />
+        {/* <LogOutButton className="ml-auto" session={session} /> */}
       </div>
     </>
   );
