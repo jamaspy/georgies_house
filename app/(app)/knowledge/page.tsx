@@ -1,26 +1,25 @@
 import React from "react";
 import { getContent } from "@/actions/posts";
-import { ArticleLink } from "@/components/complex/";
-import { Post } from "@/models/sanity";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 export const revalidate = 20;
 
 const KnowledgePage = async () => {
   const posts = await getContent();
-  console.log("🚀  HERE>>>>>> :  : KnowledgePage : posts:", posts);
   return (
-    <div className="h-full w-full p-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {posts.map((post: Post) => (
-        <ArticleLink
-          key={post._id}
+    <BentoGrid className="max-w-4xl mx-auto">
+      {posts.map((post: any, i: number) => (
+        <BentoGridItem
+          key={post.title}
           title={post.title}
-          summary={post.summary}
-          author={post.author}
-          createdAt={post._createdAt}
+          description={post.summary}
+          header={post.mainImage}
           slug={post.slug.current}
+          categories={post.categories}
+          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
         />
       ))}
-    </div>
+    </BentoGrid>
   );
 };
 

@@ -1,5 +1,6 @@
 "use server";
 
+import { Post } from "@/models/sanity";
 import { client } from "@/sanity/lib/client";
 
 export async function getContent() {
