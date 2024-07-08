@@ -3,12 +3,14 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Author } from "@/models/sanity";
+import { Badge } from "@/components/ui/badge";
 interface ArticleLinkProps {
   title: string;
   summary: string;
   slug: string;
   author: Author;
   createdAt: string;
+  categories: string[];
 }
 
 export function ArticleLink({
@@ -17,6 +19,7 @@ export function ArticleLink({
   slug,
   author,
   createdAt,
+  categories,
 }: Readonly<ArticleLinkProps>) {
   const router = useRouter();
   return (
@@ -26,15 +29,28 @@ export function ArticleLink({
       onClick={() => router.push(`/knowledge/${slug}`)}
     >
       <p className="text-md font-semibold">{title}</p>
+      <div className="flex flex-row gap-2 my-2">
+        {categories.map((category) => (
+          <Badge
+            variant="secondary"
+            className="text-xs font-thin"
+            key={category}
+          >
+            #{category}
+          </Badge>
+        ))}
+      </div>
       <p className="text-sm">{summary}</p>
-      <p className="text-george-orange text-xs">
-        {`Published by ${author?.name}`} on{" "}
-        {new Date(createdAt).toLocaleDateString("en-US", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        })}{" "}
-      </p>
+      <div className="flex flex-col gap-1 mt-2">
+        <p className="text-george-orange text-xs font-semibold">
+          {`Published by ${author?.name}`} on{" "}
+          {new Date(createdAt).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}{" "}
+        </p>
+      </div>
     </button>
   );
 }
