@@ -41,3 +41,24 @@ export const getLatestMood = async () => {
     console.error("Get Latest Mood Error:", error);
   }
 };
+export const getAllMood = async () => {
+  const session = await auth();
+  if (!session) {
+    return null;
+  }
+  try {
+    const records = await client.db.mood
+      .filter({ user: session?.user?.id })
+      .sort("xata.updatedAt", "desc")
+      .getAll();
+
+    if (records.length > 0) {
+      return formatXataResponse(records);
+    } else {
+      console.log("No records found for the user");
+      return [];
+    }
+  } catch (error) {
+    console.error("Get Latest Mood Error:", error);
+  }
+};

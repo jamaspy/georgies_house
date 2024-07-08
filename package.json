@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@auth/xata-adapter": "^1.1.0",
+    "@headlessui/react": "^2.0.4",
+    "@headlessui/tailwindcss": "^0.2.1",
     "@hookform/resolvers": "^3.4.0",
     "@portabletext/react": "^3.0.18",
     "@portabletext/types": "^2.0.13",
@@ -19,6 +21,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-email/components": "^0.0.17",
+    "@remixicon/react": "^4.2.0",
     "@sanity-typed/types": "^6.3.5",
     "@sanity/client": "^6.18.2",
     "@sanity/image-url": "^1.0.2",
@@ -27,6 +30,7 @@
     "@sanity/ui": "^2.1.11",
     "@sanity/vision": "^3.42.1",
     "@tabler/icons-react": "^3.5.0",
+    "@tremor/react": "^3.17.2",
     "@xata.io/client": "^0.29.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -52,6 +56,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
